@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   THEME ENGINES
+   ========================================= */
+
+/* 1. MIDNIGHT (DEFAULT) - Luxury Black & Gold */
+[data-theme='midnight'] {
+  --bg-main: #000000;
+  --bg-secondary: #111111;
+  --bg-card: #1a1a1a;
+  --text-main: #ffffff;
+  --text-muted: #a3a3a3;
+  --primary: #fbbf24;      /* Gold */
+  --accent: #ffffff;
+  --border: #333333;
+}
+
+/* 2. BLUEPRINT - (Deep Navy & Electric Cyan) - Professional & Colorful */
+[data-theme='blueprint'] {
+  --bg-main: #0f172a;      /* Slate-900 (Deep Navy) */
+  --bg-secondary: #1e293b; /* Slate-800 */
+  --bg-card: #1e293b;      /* Matches secondary for seamless look */
+  --text-main: #f8fafc;    /* White text */
+  --text-muted: #94a3b8;   /* Blue-Grey text */
+  --primary: #38bdf8;      /* Electric Sky Blue */
+  --accent: #22d3ee;       /* Cyan */
+  --border: #334155;       /* Slate-700 */
+}
+
+/* 3. CONCRETE - Industrial Grey & Safety Orange (Totally different look) */
+[data-theme='concrete'] {
+  --bg-main: #d4d4d4;      /* Darker Grey */
+  --bg-secondary: #e5e5e5;
+  --bg-card: #f5f5f5;
+  --text-main: #171717;    /* Neutral 900 */
+  --text-muted: #525252;
+  --primary: #ea580c;      /* Safety Orange */
+  --accent: #000000;
+  --border: #a3a3a3;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.5s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   UTILITIES
+   ========================================= */
+
+/* TRAPEZIUM / TECH BUTTON SHAPE */
+.clip-trap {
+  /* Cuts the top-left and bottom-right corners */
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+.clip-angle {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover Lift */
+.hover-lift {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--primary); }
+
+/* =========================================
+   ATTENTION SEEKER ANIMATION
+   ========================================= */
+
+@keyframes attention-wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+  5% { transform: rotate(-12deg) scale(1.1); box-shadow: 0 0 15px var(--primary); }
+  10% { transform: rotate(12deg) scale(1.1); }
+  15% { transform: rotate(-8deg) scale(1.1); }
+  20% { transform: rotate(8deg) scale(1.1); }
+  25% { transform: rotate(0deg) scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
+.animate-attention {
+  animation: attention-wiggle 4s infinite ease-in-out;
+  /* Make it stand out even more */
+  background-color: var(--bg-card);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.animate-attention:hover {
+  animation: none; /* Stop shaking when they actually try to click it */
+  transform: scale(1.1);
+  background-color: var(--primary);
+  color: var(--bg-main);
+  cursor: pointer;
+}
+
