@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ShieldCheck, MapPin, FileText, PhoneCall, Zap, Box, Navigation, Lock, Download, X, CheckCircle, Star, Clock, Activity } from 'lucide-react';
-import redTruckImg from '../assets/imgs/Gemini_Generated_Image_52fk4n52fk4n52fk.png';
-import driverImg from '../assets/imgs/Gemini_Generated_Image_uq8qxkuq8qxkuq8q.png';
+import redTruckImg from '../assets/imgs/Gemini_Generated_Image_52fk4n52fk4n52fk.webp';
+import driverImg from '../assets/imgs/Gemini_Generated_Image_uq8qxkuq8qxkuq8q.webp';
 
 
 const Home = () => {
