@@ -118,7 +118,7 @@ const Home = () => {
                 className="clip-trap relative shadow-2xl w-full object-cover aspect-[4/5]"
               />
               <div className="absolute bottom-6 left-6 bg-black/70 backdrop-blur-md px-6 py-4 border-l-4 border-[var(--primary)] shadow-lg">
-                <p className="font-black text-xl uppercase text-white">Marcus "Turbo" King</p>
+                <p className="font-black text-xl uppercase text-white">Marcus 'Turbo' King</p>
                 <p className="text-sm text-[var(--text-muted)] text-gray-400 font-bold">Owner & Lead Operator</p>
               </div>
             </div>
